@@ -7,7 +7,7 @@ const minus = () => {
     b++;
     result++;
   }
-  console.log('Result: ', result);;
+  console.log('Resta: ', result);;
 };
 
 const multiply = (a, b) => {
@@ -20,7 +20,37 @@ const multiply = (a, b) => {
 }
 
 const cubic = (base, exp) => {
-  total = 0;
-  
+  let acc = 1;
+  while (exp > 0) {
+    acc *= base;
+    exp--;
+  }
+  console.log(acc);
 }
 
+const divide = (divisor, dividiendo) => {
+  let acc = 0;
+  let coc = 0;
+
+  if (dividiendo < divisor) {
+    console.log('Divisor debe ser menor que el dividendo');
+    return;
+  }
+
+  while (acc < dividiendo) {
+    acc += divisor;
+    coc ++;
+  }
+  console.log('Division: ', coc);
+}
+
+const factorial = (base) => {
+  let acc = 1;
+  while (base > 0) {
+    acc *= base;
+    base--;
+  }
+  console.log(`Factorial: ${acc}`);
+}
+
+factorial(5)
