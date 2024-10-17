@@ -7,7 +7,7 @@ const minus = () => {
     b++;
     result++;
   }
-  console.log('Result: ', result);;
+  console.log("Resta: ", result);
 };
 
 const multiply = (a, b) => {
@@ -16,11 +16,55 @@ const multiply = (a, b) => {
     b--;
     total += a;
   }
-  console.log('Result: ', total);
-}
+  console.log("Result: ", total);
+};
 
 const cubic = (base, exp) => {
-  total = 0;
-  
-}
+  let acc = 1;
+  while (exp > 0) {
+    acc *= base;
+    exp--;
+  }
+  console.log(acc);
+};
 
+const divide = (divisor, dividiendo) => {
+  let acc = 0;
+  let coc = 0;
+
+  if (dividiendo < divisor) {
+    console.log("Divisor debe ser menor que el dividendo");
+    return;
+  }
+
+  while (acc < dividiendo) {
+    acc += divisor;
+    coc++;
+  }
+  console.log("Division: ", coc);
+};
+
+const factorial = (base) => {
+  let acc = 1;
+  while (base > 0) {
+    acc *= base;
+    base--;
+  }
+  console.log(`Factorial: ${acc}`);
+};
+
+const isPrimeNum = (num) => {
+  let isPrime = true;
+  //* Optimizations
+  for (let index = 2; index <= num / 2 && isPrime; index++) {
+    return num % index === 0 ? !isPrime : isPrime;
+  }
+
+  if (isPrime) {
+    console.log("Is prime");
+  } else {
+    console.log("Is not prime");
+  } 
+};
+
+console.log(isPrimeNum(100));
